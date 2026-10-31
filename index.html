@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar and Clock</title><meta name="description" content="A calendar with event reminders and a live digital clock.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"></head><body>
+<main class="wrap">
+<section class="clock" aria-label="Digital clock"><time id="time" class="time">--:--:--</time><p id="today" class="todaytxt"></p><button id="fmt" class="chip" type="button" aria-pressed="false">24-hour</button></section>
+<section class="cal" aria-label="Calendar">
+<div class="head"><button id="prev" class="nav" type="button" aria-label="Previous month">&lsaquo;</button><h1 id="title" aria-live="polite"></h1><button id="next" class="nav" type="button" aria-label="Next month">&rsaquo;</button></div>
+<div class="dow" aria-hidden="true"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div>
+<div id="grid" class="grid"></div>
+<div class="legend"><span><i class="k k-today"></i>Today</span><span><i class="k k-has"></i>Has event</span><span><i class="k k-sel"></i>Selected</span><button id="goToday" class="chip" type="button">Go to today</button></div>
+</section>
+<section class="panel" aria-live="polite"><h2 id="ptitle"></h2><ul id="list"></ul><button id="add" class="chip" type="button">Add event</button><p class="hint">Click a date to see its events. Double-click a date to add one.</p></section>
+</main>
+<dialog id="dlg" aria-labelledby="dlabel"><form id="ef"><h2>New event</h2><p id="dlabel" class="dl"></p>
+<label for="etitle">Title</label><input id="etitle" maxlength="80" required>
+<label for="etime">Time (optional)</label><input id="etime" type="time">
+<label for="enote">Note (optional)</label><input id="enote" maxlength="120">
+<div class="acts"><button id="cancel" class="chip" type="button">Cancel</button><button class="chip solid" type="submit">Save event</button></div></form></dialog>
+<div id="toast" role="status"></div>
+<script src="js/calendar.js"></script><script src="js/clock.js"></script>
+</body></html>
